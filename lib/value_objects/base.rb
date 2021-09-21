@@ -22,7 +22,8 @@ module ValueObjects
       end
 
       def dump(value)
-        value.to_hash if value
+        return value.to_hash if value.respond_to?(:to_hash)
+        {}
       end
 
       def i18n_scope

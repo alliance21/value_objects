@@ -46,7 +46,7 @@ module ValueObjects
       class << self
 
         def inherited(subclass)
-          subclass.instance_variable_set(:@value_class, subclass.parent)
+          subclass.instance_variable_set(:@value_class, subclass.module_parent)
         end
 
         def new(attributes)

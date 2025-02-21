@@ -25,7 +25,7 @@ module ValueObjects
         else
           value_class
         end
-      serialize(attribute, coder)
+      serialize attribute, coder: coder
       validates_with(::ValueObjects::ValidValidator, options.merge(attributes: [attribute])) unless options[:no_validation]
       setter = :"#{attribute}="
       define_method("#{attribute}_attributes=") do |attributes|

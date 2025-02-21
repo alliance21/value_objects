@@ -15,13 +15,13 @@ Gem::Specification.new do |s|
   s.files         = Dir['lib/**/*', 'LICENSE.txt', 'README.md']
   s.require_paths = ['lib']
 
-  s.required_ruby_version = '>= 2.2'
+  s.required_ruby_version = '>= 3.4.2'
 
-  s.add_dependency 'activerecord', '>= 4.2'
+  s.add_dependency 'activerecord', '~> 8.0.1'
 
-  s.add_development_dependency 'actionview', '>= 4.2'
-  s.add_development_dependency 'bundler', '~> 1.11'
-  s.add_development_dependency 'rake', '~> 10.0'
-  s.add_development_dependency 'rspec', '~> 3.0'
-  s.add_development_dependency 'sqlite3', '~> 1.3'
+  s.add_development_dependency 'actionview', '~> 8.0'
+  s.add_development_dependency 'bundler', '~> 2.4'
+  s.add_development_dependency 'rake', '~> 13.0'
+  s.add_development_dependency 'rspec', '~> 3.13'
+  s.add_development_dependency 'sqlite3', '~> 2.6'
 end

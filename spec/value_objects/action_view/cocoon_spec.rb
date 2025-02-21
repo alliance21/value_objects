@@ -5,7 +5,7 @@ RSpec.describe ValueObjects::ActionView::Cocoon do
   class TestView < ActionView::Base
   end
 
-  let(:test_view) { TestView.new }
+  let(:test_view) { TestView.new(ActionView::LookupContext.new([]), {}, nil) }
   let(:body) { Nokogiri::HTML(html).at('body') }
   let(:link) { body.at('a') }
   let(:link_text) { link.text }

@@ -40,7 +40,7 @@ RSpec.describe ValueObjects::Base do
 
     let(:value) { TestValue.new.tap(&:valid?) }
 
-    it { expect(value.errors.keys).to contain_exactly(:foo) }
+    it { expect(value.errors.messages.keys).to contain_exactly(:foo) }
 
   end
 

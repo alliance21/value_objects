@@ -116,7 +116,7 @@ RSpec.describe ValueObjects::ActiveRecord do
       let(:value) { FooBarValue.new(foo: '', bar: 'abc') }
       let(:values) { [FooBarValue.new(foo: '', bar: '123'), FooBarValue.new(foo: '', bar: 321)] }
 
-      it { expect(record.errors.keys).to contain_exactly(:value, :values) }
+      it { expect(record.errors.messages.keys).to contain_exactly(:value, :values) }
 
     end
 

@@ -38,11 +38,12 @@ jobs:
           name: Run RSpec
           command: |
             ./tmp/cc-test-reporter before-build
+            mkdir -p coverage/
             bundle exec rspec --profile 10 \
                               --out tmp/test-results/rspec.xml \
                               --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
-            ./tmp/cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
+            ./tmp/cc-test-reporter after-build --coverage-input-type simplecov --exit-code $? --prefix /home/circleci/value_objects
           when: always
       - store_test_results:
           path: tmp/test-results

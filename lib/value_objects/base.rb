@@ -61,6 +61,7 @@ module ValueObjects
         end
 
         def load(values)
+          values = [] if values == '[]'
           (values.blank? ? [] : values.map { |value| @value_class.new(value) }) if values
         end
 

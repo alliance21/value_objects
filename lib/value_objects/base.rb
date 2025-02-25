@@ -16,7 +16,14 @@ module ValueObjects
     class << self
 
       def load(value)
-        new(value) if value
+        # Fix value object initialization with blank values
+        #
+        # Convert blank values to empty hash in Base.load to ensure consistent 
+        # object initialization. This prevents potential errors when instantiating 
+        # value objects with nil or blank values.
+        return nil if value.nil?
+        value = {} if value.blank? 
+        new(value)
       end
 
       def dump(value)
